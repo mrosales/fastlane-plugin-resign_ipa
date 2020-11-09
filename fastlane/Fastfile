@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+lane :test do
+  UI.user_error!('No test project configured yet.')
+  resign_ipa
+end
