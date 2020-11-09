@@ -34,7 +34,7 @@ module Fastlane
         other_action.match(
           type: 'adhoc',
           app_identifier: app_identifier,
-          readonly: true,
+          readonly: false,
           force_for_new_devices: true
         )
 
