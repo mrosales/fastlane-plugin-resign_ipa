@@ -34,7 +34,8 @@ module Fastlane
         other_action.match(
           type: 'adhoc',
           app_identifier: app_identifier,
-          readonly: true
+          readonly: true,
+          force_for_new_devices: true
         )
 
         UI.message("Sigh profile type: #{lane_context[SharedValues::SIGH_PROFILE_TYPE]}")
