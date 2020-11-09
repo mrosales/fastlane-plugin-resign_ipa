@@ -31,7 +31,7 @@ module Fastlane
         UI.message("\n#{table}\n")
 
         app_identifier = info_plist['CFBundleIdentifier']
-        match(
+        other_action.match(
           type: 'adhoc',
           app_identifier: app_identifier,
           readonly: true
@@ -68,7 +68,7 @@ module Fastlane
           entitlements_file << entitlements.to_plist
           entitlements_file.flush
 
-          resign(
+          other_action.resign(
             ipa: params[:ipa],
             signing_identity: common_name,
             provisioning_profile: profile_path,
@@ -99,7 +99,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(
             key: :ipa,
             env_name: "RESIGN_IPA_FILE",
-            description: "Path to the ipa file to sign.",
+            description: "Path to the ipa file to sign",
             optional: false,
             type: String
           )
